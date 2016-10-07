@@ -53,8 +53,11 @@ public class Login extends HttpServlet {
             PasswordAuthentication pa = new PasswordAuthentication();
             if (token != null && pa.authenticate(pass, token)) {
                 // first invalidate the session to get new sessionId
-                request.getSession(false).invalidate();
-                HttpSession session = request.getSession();
+                HttpSession session = request.getSession(false);
+                if (session != null) {
+                    session.invalidate();
+                }
+                session = request.getSession(true);
                 session.setAttribute("user", user);
                 response.sendRedirect("Welcome");
             } else {
