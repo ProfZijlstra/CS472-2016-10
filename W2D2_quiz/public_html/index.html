@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function multiplesOf3(arr) {
+                return arr.map((n) => n % 3 === 0).reduce((p,c) => p + c);
+            }
+            console.log(multiplesOf3([1,2,3,4,5,6,7,8,9,10]));
+            
+            function mults3(...arr) {
+                return arr.map((n) => n % 3 === 0 ? 1 : 0).reduce((p,c) => p + c);
+            }
+            console.log(mults3(1,2,3,4,5,6,7,8,9,10));
+        </script>
+        <script>
+            function x() {
+                y();
+                function y() {
+                    console.log(a);
+                }
+                var a = 10;
+                console.log(a);
+            }
+            var a = 50;
+            x();
+            console.log(a);
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
