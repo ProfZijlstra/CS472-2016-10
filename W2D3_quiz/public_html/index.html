@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var foo =1;
+            function bar() {
+                var foo;
+                if (!foo) {
+                    var foo = 10;
+                }
+                alert(foo);
+            }
+            bar();
+        </script>
+        <script>
+            var foo1 =1;
+            function bar1() {
+                if (!foo1) {
+                    let foo1 = 10;
+                }
+                alert(foo1);
+            }
+            bar1();
+        </script>
+        
+        <script>
+            // this is a module
+            var Employee = (function() {
+                var name;
+                var age;
+                var salary;
+
+                function getName() {return name;}
+                function getAge() { return age; }
+                function  getSalarty() {return salary; }
+                function setName(n) {name = n; }
+                function setAge(a) {age = a; }
+                function setSalary(s) {salary = s;}
+                function increaseSalary(percentage) { salery = getSalary() * (1 + percentage / 100); }
+                function incrementAge() {age = getAge() +1; }
+
+                return {
+                        ‘setName’: setName,
+                        ‘setAge’: setAge,
+                        ‘setSalary’: setSalary,
+                        ‘increaseSalary’: increaseSalary,
+                        ‘incrementAge’: incrementAge
+                };
+            })();
+            
+            // this is an constructor
+            var Employee = function(n, a, s) {
+                var name = n || 'John Doe';
+                var age = a || '0';
+                var salary = s || '0';
+
+                // private functions
+                function getName() {return name;}
+                function getAge() { return age; }
+                function  getSalarty() {return salary; }
+
+                // these functions should really be added to the .prototype of the constructor
+                // otherwise each instance will have .hasOwnProperty() == true of these
+                this.setName       =  function(n) { name = n; }
+                this.setAge        =  function(a) { age = a; }
+                this.setSalary     =  function(s) { salary = s;}
+                this.increaseSalary=  function(percentage) { salery = getSalary() * (1 + percentage / 100); }
+                this.incrementAge  =  function() {age = getAge() +1; }
+                this.toString = function() {return name + " " + age + " " + salary; };
+        
+                // return this; is implied
+            };
+            
+
+        </script>
+        
+        
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

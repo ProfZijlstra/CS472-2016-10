@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import static org.apache.commons.lang.StringEscapeUtils.escapeHtml;
 
 /**
  *
@@ -48,7 +49,7 @@ public class Welcome extends HttpServlet {
             out.println("<title>Servlet Welcome</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Welcome " + user + "</h1>");
+            out.println("<h1>Welcome " + escapeHtml(user) + "</h1>");
             out.println("<p><a href='Logout'>logout</p>");
             out.println("</body>");
             out.println("</html>");

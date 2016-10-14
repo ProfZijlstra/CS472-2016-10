@@ -11,16 +11,54 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script>
-            // use the jQuery function to run code at startup
-            $(function () {
-                // this is a jQuery object
-                var obj = $("div");
-                // this is a bad way of doing jQuery, too many lines!
-                obj.css("background-color", "yellow");
-                // the original DOM object can be retrieved:
-                var div = obj[0];
-                div.innerHTML = "Hello";
-            });
+//            // use the jQuery function to run code at startup
+//            $(function () {
+//                // this is a jQuery object
+//                var obj = $("div");
+//                // this is a bad way of doing jQuery, too many lines!
+//                obj.css("background-color", "yellow");
+//                // the original DOM object can be retrieved:
+//                var div = obj[0];
+//                div.innerHTML = "Hello";
+//            });
+            
+//            var abc = "test";
+//            
+//            var Shape = {
+//                name: "Default name"
+//            };
+//            
+//            var square  = Object.create(Shape);
+//            square.size = 100;
+//            
+//            var mySquare = Object.create(square);
+//            mySquare.size = 50;
+//            
+//            alert(mySquare.size + " " + mySquare.name + " " + mySquare.abc);
+//            
+//            var Drawing =  {
+//                color: 'grey'
+//            };
+
+            var Shape = function() {
+                this.name = "Default name";
+            };
+            
+            // defaults to Object for .__proto__ because .prototype not set on Shape
+            var shape = new Shape();
+            
+            var Square = function() {
+                this.size = 100;
+            };
+            Square.prototype = shape;
+            
+            var square = new Square(); 
+            alert(square.__proto__ === shape);
+    
+    
+            // all squares will now be drawings
+            mySquare.__proto__.__proto__ = Drawing;
+            
         </script>
     </head>
     <body>

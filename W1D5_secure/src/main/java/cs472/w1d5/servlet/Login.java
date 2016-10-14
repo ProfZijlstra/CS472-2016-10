@@ -52,12 +52,14 @@ public class Login extends HttpServlet {
             String token = userDao.getToken(con, user);
             PasswordAuthentication pa = new PasswordAuthentication();
             if (token != null && pa.authenticate(pass, token)) {
+                
                 // first invalidate the session to get new sessionId
                 HttpSession session = request.getSession(false);
                 if (session != null) {
                     session.invalidate();
                 }
                 session = request.getSession(true);
+                
                 session.setAttribute("user", user);
                 response.sendRedirect("Welcome");
             } else {
