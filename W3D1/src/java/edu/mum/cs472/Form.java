@@ -38,7 +38,6 @@ public class Form extends HttpServlet {
 
             String test = getServletContext().getInitParameter("Test");
             Cookie[] cookies = request.getCookies();
-            
 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -49,13 +48,15 @@ public class Form extends HttpServlet {
             if (msg != null) {
                 out.println("<h2 style='color: red;'>Error: missing elements</h2>");
             }
-            
-            for (int i = 0; i < cookies.length; i++) {
-                out.println("<h2>Cookie name:" +cookies[i].getName() +
-                        " value: "+ cookies[i].getValue()+"/h2>");
+
+            if (cookies != null) {
+                for (int i = 0; i < cookies.length; i++) {
+                    out.println("<h2>Cookie name:" + cookies[i].getName()
+                            + " value: " + cookies[i].getValue() + "/h2>");
+                }
             }
-            
-            out.println("<h1>Init Param: "+ test +"</h1>");
+
+            out.println("<h1>Init Param: " + test + "</h1>");
             out.println("<form method='get' action='submit'>");
             out.println("    <input placeholder='you@mail.com' type='email' name='email' /><br/>");
             out.println("    <textarea name='msg' placeholder='Write message here'></textarea><br />");
