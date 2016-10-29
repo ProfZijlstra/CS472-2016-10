@@ -1,0 +1,114 @@
+body {
+  user-select: none;
+  user-drag: none;
+  overflow: hidden;  
+  background: url("../img/background.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#actors {
+  display: none;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#game { 
+  width: 1400px;
+  height: 800px;
+  cursor: none;
+}
+
+.crosshair {
+  position: relative;
+  z-index: 3;
+  background: url(../img/crosshair.png);
+  width: 60px;
+  height: 60px;
+  background-position: right: 10px;
+  pointer-events: none;
+}
+
+.sprite {
+  position: relative;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  display: block;
+  background: url(../img/sprites.png) no-repeat;
+}
+
+.duck.right {
+  background-position: -836px -208px;
+  width: 104px;
+  height: 74px;
+}
+
+.duck.right.flap {
+  background-position: -695px -208px;
+  width: 104px;
+  height: 74px;
+}
+
+.dead {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+#game-menu {
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#game-menu-message {
+  text-transform: uppercase;
+  font-family: courier, "Courier New", monospace;
+  background: #000;
+  color: #FFF;
+  width: 600px;
+  font-size: 4em;
+  padding: 1.4em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+}
+
+#game-menu-message p {
+  padding-top: 2em;
+  font-size: 0.4em;
+}
+
+#score {
+  font-family: impact;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  z-index: 3;
+}
+
+#menu {
+  font-family: impact;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  z-index: 3;
+  cursor: pointer;  
+}
+
+.display_none {
+  display: none;
+}

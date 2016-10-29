@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- 
+Name: Tan Luong
+Student ID: 985408
+ -->
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Bootstrap latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+	
+	<!-- Page css -->
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	
+	<!-- Latest jQuery -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		
+	<!-- Bootstrap latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+
+	<!-- Falling leaves effect -->
+	<link href="css/3d-falling-leaves.css" rel="stylesheet">
+    <script src="js/rotate3Di.min.js" type="text/javascript"></script>
+    <script src="js/3d-falling-leaves.min.js" type="text/javascript"></script>
+    
+	<title>Duck Hunt Game</title>
+</head>
+<body>
+
+	<div class="nightsky">
+		<!-- Menu -->
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<a class="navbar-brand"> <img src="img/duck_logo.png"
+					alt="LOGO" />
+				</a>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-toggle="modal" data-target="#myModal">ABOUT</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Main content  -->
+		<div class="hero">
+			<h1>Duck Hunt Game</h1>
+
+			<p>Enter your name</p>
+
+			<form action="game" method="post" id="form">
+				<div>
+					<input type="text" id="name" name="name" placeholder="Your Name"
+						required class="form-control player-name" autofocus />
+				</div>
+
+				<button type="submit" class="btn btn-primary">Start</button>
+
+			</form>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<p class="muted credit text-center">Copyright 2016 by Tan Luong</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- About Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">FINAL WEB PROJECT</h4>
+				</div>
+				<div class="modal-body">
+					<h4>Course</h4>
+					<p>
+						<strong>CS472 Web Programming</strong>
+					</p>
+					<p>
+						<strong>Maharishi University of Management</strong>
+					</p>
+					<p>
+						<strong>Professor Michael Zijlstra</strong>
+					</p>
+					<p>&nbsp;</p>
+					
+					<h4>Author</h4>
+					<p>
+						<strong>Name: </strong>Tan Luong
+					</p>
+					<p>
+						<strong>StudentID: </strong>985408
+					</p>
+					<p>&nbsp;</p>
+
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-lg"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

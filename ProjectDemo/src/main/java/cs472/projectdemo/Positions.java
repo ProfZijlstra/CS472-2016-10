@@ -22,7 +22,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "Positions", urlPatterns = {"/positions"})
 public class Positions extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -33,6 +32,20 @@ public class Positions extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // show json -- JSP already has access to players in application scope
+        request.getRequestDispatcher("positions.jsp").forward(request, response);
+    }
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String name = (String) session.getAttribute("name");
@@ -48,9 +61,7 @@ public class Positions extends HttpServlet {
         Player me = players.get(name);
         me.setX(x);
         me.setY(y);
-        
-        // show json 
-        request.getRequestDispatcher("positions.jsp").forward(request, response);
+        // return nothing
     }
 
 }

@@ -31,10 +31,14 @@ var GAME = (function () {
     function updatePositions(data) {
         $.each(data, function (name, obj) {
             var dude = $("#" + name);
-            if (!dude[0]) {
+            
+            // if no dom element exists for this dude, then create it
+            var domElem = dude[0];
+            if (!domElem) {
                 $("<div>"+name+"</div>").attr("id", name).addClass("dude")
                         .appendTo("#container");
             }
+            
             dude.css("left", obj.x + "px");
             dude.css("top", obj.y + "px");
         });
@@ -73,7 +77,12 @@ var GAME = (function () {
                 //player.css("top", y + "px");                            break;
                 break;
         }
-        $.get("positions", {'x': x, 'y': y})
+        // the player is pressing a button go send new desired coordinates
+        if (going) {
+            $.post("positions", {"x": x, "y": y});
+        }
+        // always get latest coordinates of everyone in the game
+        $.get("positions", {"x": x, "y": y})
                 .done(updatePositions)
                 .fail(ajaxFailure);
     }
